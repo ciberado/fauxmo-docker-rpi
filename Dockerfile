@@ -1,4 +1,4 @@
-FROM docker.io/project31/aarch64-alpine-qemu:3.5.4
+FROM docker.io/project31/aarch64-alpine-qemu
 RUN [ "cross-build-start" ]
 
 RUN apt update && \
