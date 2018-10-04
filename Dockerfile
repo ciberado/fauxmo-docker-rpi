@@ -1,6 +1,8 @@
 FROM resin/armv7hf-debian
+
 RUN [ "cross-build-start" ]
 
+SHELL ["/bin/bash", "-c"]
 RUN apt update -q && \
     apt upgrade -y -q && \
     apt install -y python3-pip python3-venv
