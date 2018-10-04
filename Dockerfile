@@ -1,9 +1,9 @@
 FROM resin/armv7hf-debian
 RUN [ "cross-build-start" ]
 
-RUN apt update && \
-    apt upgrade -y && \
-    apt install -y python-pip3
+RUN apt update -q && \
+    apt upgrade -y -q && \
+    apt install -y python3-pip
 
 RUN python3 -m venv .venv && \
     source ./.venv/bin/activate && \
