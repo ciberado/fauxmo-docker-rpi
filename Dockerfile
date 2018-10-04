@@ -3,7 +3,7 @@ RUN [ "cross-build-start" ]
 
 RUN apt update -q && \
     apt upgrade -y -q && \
-    apt install -y python3-pip
+    apt install -y python3-pip python3-venv
 
 RUN python3 -m venv .venv
 RUN source ./.venv/bin/activate
