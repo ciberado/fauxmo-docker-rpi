@@ -1,4 +1,4 @@
-FROM docker.io/project31/aarch64-alpine-qemu
+FROM resin/armv7hf-debian
 RUN [ "cross-build-start" ]
 
 RUN apt update && \
