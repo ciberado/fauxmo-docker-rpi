@@ -1,14 +1,9 @@
-FROM resin/armv7hf-debian
+FROM python:alpine
 
-RUN [ "cross-build-start" ]
+RUN pip3 install --upgrade pip \
+    python3 -m venv .venv \
+    source ./.venv/bin/activate \
+    python3 -m pip install fauxmo
 
-RUN apt update -q && \
-    apt upgrade -y -q && \
-    apt install -y python3-pip python3-venv
-
-RUN [ "cross-build-end" ]
-
-COPY run-fauxmo.sh run-fauxmo.sh
-VOLUME /config
-
-CMD ["run-fauxmo.sh"]
+ENTRYPOINT ["fauxmo", "-v", -"c"]
+CMD ["/config/fauxmo.json"]
